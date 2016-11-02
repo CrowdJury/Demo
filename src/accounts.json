@@ -1,0 +1,92 @@
+{
+    "admin": {
+        "address": "0x55aeddba0501bbfd956fe268a4770b93dc3e7ba9",
+        "password": "StrongPassword0!",
+        "seed": "swear what scare solar jelly road thing salad night property swamp slim",
+        "salt": "o4AEnPTHloCcDhJgABtZS3gj+zvne4MX/nC1jX6NXdM=",
+        "data": "c3dlYXIgd2hhdCBzY2FyZSBzb2xhciBqZWxseSByb2FkIHRoaW5nIHNhbGFkIG5pZ2h0IHByb3BlcnR5IHN3YW1wIHNsaW07bzRBRW5QVEhsb0NjRGhKZ0FCdFpTM2dqK3p2bmU0TVgvbkMxalg2TlhkTT0=",
+        "privateKey": "536e5fd9266b4412904187d21d8ee4338ec35f2a5b70b72b6e1dd9caf3b09612"
+    },
+    "users": [
+        {
+            "address": "0x2aec5971a1ae3a7259125e537ccc72db83ae54fd",
+            "password": "StrongPassword1!",
+            "seed": "oil stadium tip lawsuit bean stereo game immense penalty laundry room club",
+            "salt": "OhqpwtPIU6oq+MEBTXuGRQeggaXCSyhaPwqXmSFMXZM=",
+            "data": "b2lsIHN0YWRpdW0gdGlwIGxhd3N1aXQgYmVhbiBzdGVyZW8gZ2FtZSBpbW1lbnNlIHBlbmFsdHkgbGF1bmRyeSByb29tIGNsdWI7T2hxcHd0UElVNm9xK01FQlRYdUdSUWVnZ2FYQ1N5aGFQd3FYbVNGTVhaTT0=",
+            "privateKey": "13ec09911aaeb9e83222b10f3aef663ecff50b894920371aee6949fd9bfaa99b"
+        },
+        {
+            "address": "0x2c231244790615f2d0371bcb748ef8e3de550ac0",
+            "password": "StrongPassword2!",
+            "seed": "main peasant adapt affair cannon suffer pigeon onion now ketchup ramp unfold",
+            "salt": "QTmaWVHPqZUIEMOVgsMq6lUtWQJEPfLY6ySr7v/vDL4=",
+            "data": "bWFpbiBwZWFzYW50IGFkYXB0IGFmZmFpciBjYW5ub24gc3VmZmVyIHBpZ2VvbiBvbmlvbiBub3cga2V0Y2h1cCByYW1wIHVuZm9sZDtRVG1hV1ZIUHFaVUlFTU9WZ3NNcTZsVXRXUUpFUGZMWTZ5U3I3di92REw0PQ==",
+            "privateKey": "c8288858f5774e88262ade0f51926a0844be4f24883f78fb35506808824a0142"
+        },
+        {
+            "address": "0x01f289a8e5517521e1b3179d7fd7755ae97f85fc",
+            "password": "StrongPassword3!",
+            "seed": "spirit artwork fancy misery essay among session erosion pink protect scout pupil",
+            "salt": "T4lMWezDn7GYWtCe3KBPGmdJivBe3VvT+m4GwlIcSEI=",
+            "data": "c3Bpcml0IGFydHdvcmsgZmFuY3kgbWlzZXJ5IGVzc2F5IGFtb25nIHNlc3Npb24gZXJvc2lvbiBwaW5rIHByb3RlY3Qgc2NvdXQgcHVwaWw7VDRsTVdlekRuN0dZV3RDZTNLQlBHbWRKaXZCZTNWdlQrbTRHd2xJY1NFST0=",
+            "privateKey": "b040c57d3eb23ed38b99181518f28a613385a7528c69e66bd2dbf5f1603290af"
+        },
+        {
+            "address": "0x1815c5f2039315b2fe64c7f836e1a031262a9772",
+            "password": "StrongPassword4!",
+            "seed": "black twist grass garden token rather domain leisure parent narrow bird nature",
+            "salt": "2V2yb7o0srpSfp/4dR/vMDF05XProGkgWWFTIeAYFFA=",
+            "data": "YmxhY2sgdHdpc3QgZ3Jhc3MgZ2FyZGVuIHRva2VuIHJhdGhlciBkb21haW4gbGVpc3VyZSBwYXJlbnQgbmFycm93IGJpcmQgbmF0dXJlOzJWMnliN28wc3JwU2ZwLzRkUi92TURGMDVYUHJvR2tnV1dGVEllQVlGRkE9",
+            "privateKey": "412092e3b57ee8cf92200a86b4bc4c1ec928f2a1f2f8934634e3616bea4716a0"
+        },
+        {
+            "address": "0xa6b4dc019db309edf5fd5f2e6e0e3c83e05efd5a",
+            "password": "StrongPassword5!",
+            "seed": "north tiny unlock flavor long strong void speak immense foam cereal yellow",
+            "salt": "cNBcUniZdRwIMENKayRMumkj5ir8jsISD+PSYtTbt5g=",
+            "data": "bm9ydGggdGlueSB1bmxvY2sgZmxhdm9yIGxvbmcgc3Ryb25nIHZvaWQgc3BlYWsgaW1tZW5zZSBmb2FtIGNlcmVhbCB5ZWxsb3c7Y05CY1VuaVpkUndJTUVOS2F5Uk11bWtqNWlyOGpzSVNEK1BTWXRUYnQ1Zz0=",
+            "privateKey": "b3d5e5e132a546c389a00d144ee57913590fd6ca9f99d055ce4877d8ade5fee7"
+        },
+        {
+            "address": "0xcb1d80c748d256a59b9661bc0a152939b4264d7b",
+            "password": "StrongPassword6!",
+            "seed": "embody curve bean maximum soon code call blame response point embrace warfare",
+            "salt": "WmcrOM6a8DxfnliglzLW/o2SaQ8gWtBR0Dq+KV5rpTI=",
+            "data": "ZW1ib2R5IGN1cnZlIGJlYW4gbWF4aW11bSBzb29uIGNvZGUgY2FsbCBibGFtZSByZXNwb25zZSBwb2ludCBlbWJyYWNlIHdhcmZhcmU7V21jck9NNmE4RHhmbmxpZ2x6TFcvbzJTYVE4Z1d0QlIwRHErS1Y1cnBUST0=",
+            "privateKey": "bb9d0738b3f74dffecf4c73bdec05e3e4ba21931e31ff086bf8306532c2eb838"
+        },
+        {
+            "address": "0x8132ed553a0303af88a65e42769e14d3e430e6cc",
+            "password": "StrongPassword7!",
+            "seed": "path force clerk quick attitude pyramid tag tool wide fault stomach honey",
+            "salt": "1aN+aooV0jajtmei0BY5lbmzJKWWhOO0fwbNAuBKRIY=",
+            "data": "cGF0aCBmb3JjZSBjbGVyayBxdWljayBhdHRpdHVkZSBweXJhbWlkIHRhZyB0b29sIHdpZGUgZmF1bHQgc3RvbWFjaCBob25leTsxYU4rYW9vVjBqYWp0bWVpMEJZNWxibXpKS1dXaE9PMGZ3Yk5BdUJLUklZPQ==",
+            "privateKey": "13b554602899753f2ac96aa8e75c88e2cb91430f749815400525c3d31f6aa540"
+        },
+        {
+            "address": "0x7f3e066caae7e8806ef0a58eb1ec832cf636b139",
+            "password": "StrongPassword8!",
+            "seed": "steak train empty space chimney bundle dismiss prize resource denial parrot step",
+            "salt": "C9eERELX6Lep+gmba2ugkb2mx/fv2JvbGOQjSRx4oEw=",
+            "data": "c3RlYWsgdHJhaW4gZW1wdHkgc3BhY2UgY2hpbW5leSBidW5kbGUgZGlzbWlzcyBwcml6ZSByZXNvdXJjZSBkZW5pYWwgcGFycm90IHN0ZXA7QzllRVJFTFg2TGVwK2dtYmEydWdrYjJteC9mdjJKdmJHT1FqU1J4NG9Fdz0=",
+            "privateKey": "3d65a0076d9fcc560803bb0c84108c42c8080ae380f82871bbe2b1ce8f9c653a"
+        },
+        {
+            "address": "0x1a12f88829613aedb6ced881af3fb53c265b6d38",
+            "password": "StrongPassword9!",
+            "seed": "damage supreme afraid clay album inform speed describe invest ramp nuclear place",
+            "salt": "GsvyG9ipYoYhZOahONIxdl7lQYABYGpl8ZzxonPfX1Q=",
+            "data": "ZGFtYWdlIHN1cHJlbWUgYWZyYWlkIGNsYXkgYWxidW0gaW5mb3JtIHNwZWVkIGRlc2NyaWJlIGludmVzdCByYW1wIG51Y2xlYXIgcGxhY2U7R3N2eUc5aXBZb1loWk9haE9OSXhkbDdsUVlBQllHcGw4Wnp4b25QZlgxUT0=",
+            "privateKey": "40b62feccf63d58f776157d37a9496ce6dfa5512b8ae94802caf0b79482ac968"
+        },
+        {
+            "address": "0x5a7b69e90138f8948f83ce94c2d59a0e6272b933",
+            "password": "StrongPassword10!",
+            "seed": "crane power weird ugly bird ranch craft cloud rough sure double expand",
+            "salt": "tCKN+Y5+4KZ+6jdhWb1GGEsB426w5uGxRofWsjgMjew=",
+            "data": "Y3JhbmUgcG93ZXIgd2VpcmQgdWdseSBiaXJkIHJhbmNoIGNyYWZ0IGNsb3VkIHJvdWdoIHN1cmUgZG91YmxlIGV4cGFuZDt0Q0tOK1k1KzRLWis2amRoV2IxR0dFc0I0MjZ3NXVHeFJvZldzamdNamV3PQ==",
+            "privateKey": "76d2cdf5a3c6210c755784c35f2a1914c811e2375929d36fb5ea241edc60f561"
+        }
+    ]
+}
