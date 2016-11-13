@@ -31,53 +31,58 @@ export default class Login extends React.Component {
     login() {
         var self = this;
         if (
-            self._username.isValid() && self._password.isValid() && self._userAddress.isValid()
+            self._username.isValid() && self._password.isValid()
             && self._userAccount.isValid() && (self.state._userPassword != "")
         ){
             var username = self._username.getValue();
             var password = self._password.getValue();
-            var userAddress = self._userAddress.getValue();
             var userPassword = self._userPassword.getValue();
             var userAccount = self._userAccount.getValue();
             self.setState({loading: true});
-            Actions.Account.call({
+            Actions.Account.unlockAccount({
                 password: userPassword,
-                account: userAccount,
-                from: userAddress,
-                to: Store.contracts.Crowdjury.address,
-                payload: Actions.Ethereum.buildFunctionData([username, password], 'verifyUser', Store.contracts.Crowdjury.interface),
-                ABI: Store.contracts.Crowdjury.interface,
-                functionName: 'verifyUser'
-            },
-            function(err, result){
-                if (err){
-                    var modalBody =
-                        <div class="row modalBody">
-                            <div class="col-xs-12 text-center margin-bottom">
-                                {err}
-                            </div>
-                        </div>;
-                    self.setState({loading: false});
-                    self._modal.setState({open: true, title: 'Error', body: modalBody});
-                } else if (!result[0]){
-                    var modalBody =
-                        <div class="row modalBody">
-                            <div class="col-xs-12 text-center margin-bottom">
-                                Username not registered on Crodjury or fields are incorrect
-                            </div>
-                        </div>;
-                    self.setState({loading: false});
-                    self._modal.setState({open: true, title: 'Invalid Auth', body: modalBody});
-                } else {
-                    Store.setUser({username: username, address: userAddress});
-                    self.goTo('/home');
-                }
-            });
+                data: userAccount
+            }, function(err, decryptedAccount){
+                Actions.Account.call({
+                    password: userPassword,
+                    account: userAccount,
+                    from: decryptedAccount.address,
+                    to: Store.contracts.Crowdjury.address,
+                    payload: Actions.Ethereum.buildFunctionData([username, password], 'verifyUser', Store.contracts.Crowdjury.interface),
+                    ABI: Store.contracts.Crowdjury.interface,
+                    functionName: 'verifyUser'
+                },
+                function(err, result){
+                    if (err){
+                        var modalBody =
+                            <div class="row modalBody">
+                                <div class="col-xs-12 text-center margin-bottom">
+                                    {err}
+                                </div>
+                            </div>;
+                        self.setState({loading: false});
+                        self._modal.setState({open: true, title: 'Error', body: modalBody});
+                    } else if (!result[0]){
+                        var modalBody =
+                            <div class="row modalBody">
+                                <div class="col-xs-12 text-center margin-bottom">
+                                    Username not registered on Crodjury or fields are incorrect
+                                </div>
+                            </div>;
+                        self.setState({loading: false});
+                        self._modal.setState({open: true, title: 'Invalid Auth', body: modalBody});
+                    } else {
+                        Store.setUser({username: username, address: decryptedAccount.address});
+                        self.goTo('/home');
+                    }
+                });
+            })
+
         }
     }
 
     goTo(hash){
-        window.location.replace(window.location.href.replace('#/','#'+hash));
+        window.location.replace(window.location.protocol+'//'+window.location.host+'/#'+hash);
     }
 
     render() {
@@ -96,21 +101,15 @@ export default class Login extends React.Component {
                             ref={(c) => this._username = c}
                             type='text'
                             regex="^[a-zA-Z0-9àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœñÑ ]{4,}$"
-                            title='Username'
+                            title='Crowdjury Username'
                             placeholder='Username'
                         />
                         <Input
                             ref={(c) => this._password = c}
                             type='password'
                             regex="^[a-zA-Z0-9àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœñÑ$@$!%*?&#_~]{6,}$"
-                            title='Password'
+                            title='Crowdjury Password'
                             placeholder='Password'
-                        />
-                        <Input
-                            ref={(c) => this._userAddress = c}
-                            type='address'
-                            title='Account Address'
-                            placeholder='Address'
                         />
                         <Input
                             ref={(c) => this._userAccount = c}

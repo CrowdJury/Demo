@@ -60,7 +60,7 @@ switch (args[0]) {
         if (args.indexOf("--minerAddress") >= 0)
             mineAddress = args[args.indexOf("--minerAddress")+1];
         console.log('Miner address:', mineAddress);
-        getUserIP(function(ip){
+        //getUserIP(function(ip){
             spanwChild(__dirname+'/go-ethereum/build/bin/geth', [
                 "--datadir="+blockchainPath,
                 "--networkid", "12345",
@@ -71,15 +71,15 @@ switch (args[0]) {
                 "--rpcport", "8545",
                 "--rpccorsdomain", "*",
                 "--verbosity=6",
-                "--nat", "extip:"+ip,
+                //"--nat", "extip:"+ip,
                 "--etherbase", mineAddress,
                 "--mine",
                 "--minerthreads", "1"
             ])
-        });
+        //});
     break;
     case 'init':
-        getUserIP(function(ip){
+        //getUserIP(function(ip){
             spanwChild(__dirname+'/go-ethereum/build/bin/geth', [
                 "--datadir="+blockchainPath,
                 "--networkid", "12345",
@@ -91,11 +91,11 @@ switch (args[0]) {
                 "--rpccorsdomain", "*",
                 "--verbosity=5",
                 "--maxpeers=0",
-                "--nat", "extip:"+ip,
+                //"--nat", "extip:"+ip,
                 "--mine",
                 "init", blockchainPath+"/genesis.json"
             ])
-        });
+        //});
     break;
     case 'accounts':
         async.waterfall([

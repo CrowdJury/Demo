@@ -1,6 +1,6 @@
 {
     "web3Provider": " https://morden.infura.io/WKNyJ0kClh8Ao5LdmO7z ",
     "contracts": [
-        {"name": "Crowdjury", "address": "0x1df9c062fcb2e76a15af5f8c06c30a9689811270"}
+        {"name": "Crowdjury", "address": "0x867e252fa2d4567f3d1e9ee7090ec534737df8df"}
     ]
 }

@@ -20,7 +20,6 @@ export default class Accounts extends React.Component {
             adminAccount: appAccounts.admin,
             appAccounts: appAccounts.users
         }
-        console.log(appAccounts)
     }
 
     render() {
@@ -45,7 +44,7 @@ export default class Accounts extends React.Component {
                                 <th>0</th>
                                 <td><small>{self.state.adminAccount.address}</small></td>
                                 <td>{self.state.adminAccount.password}</td>
-                                <td><p style={{maxWidth:"200px", wordBreak: "break-all"}}><small>{self.state.adminAccount.data}</small></p></td>
+                                <td><p style={{maxWidth:"200px", wordBreak: "break-all", textAlign: 'center'}}><small>{self.state.adminAccount.data}</small></p></td>
                             </tr>
                         </tbody>
                     </table>
@@ -70,7 +69,7 @@ export default class Accounts extends React.Component {
                                         <th>{index}</th>
                                         <td><small>{account.address}</small></td>
                                         <td>{account.password}</td>
-                                        <td><p style={{maxWidth:"200px", wordBreak: "break-all"}}><small>{account.data}</small></p></td>
+                                        <td class="text-center"><p style={{maxWidth:"200px", wordBreak: "break-all", textAlign: 'center'}}><small>{account.data}</small></p></td>
                                     </tr>
                                 );
                             })}

@@ -15,31 +15,25 @@ export default class Home extends React.Component {
 
     componentWillMount(){
         if (Store.user.username == '')
-            window.location.replace(window.location.href.replace('#/home','#/login'));
+            this.goTo('/login');
     }
 
     logout(){
         Store.setUser({username: '', address: ''});
-        window.location.replace(window.location.href.replace('#/home','#/login'));
+        this.goTo('/login');
+    }
+
+    goTo(hash){
+        window.location.replace(window.location.protocol+'//'+window.location.host+'/#'+hash);
     }
 
     render() {
         var self = this;
         var reports = [{
-            title: 'Report title 1',
-            fullName: 'Report author 1',
-            description: 'description here 1',
-            reward: '66'
-        },{
-            title: 'Report title 2',
-            fullName: 'Report author 2',
-            description: 'description here 2',
-            reward: '662'
-        },{
-            title: 'Report title 3',
-            fullName: 'Report author 3',
-            description: 'description here 3',
-            reward: '663'
+            title: 'Freelance Example Report',
+            fullName: 'My User Full Name',
+            description: 'A freelance work dispute about  website development contract.',
+            reward: '0.02 BTC'
         }]
 
         return(
@@ -52,9 +46,9 @@ export default class Home extends React.Component {
                                 <div class="panel panel-default">
                                     <div class="panel-heading">{report.title}</div>
                                     <div class="panel-body">
-                                        <p>{report.fullName}</p>
+                                        <p>Author: {report.fullName}</p>
                                         <p>{report.description}</p>
-                                        <p>Reward: Ƀ {report.reward}</p>
+                                        <p>Reward: {report.reward}</p>
                                     </div>
                                     <div class="panel-footer">
                                         <ul class="pager" style={{margin: 0}}>

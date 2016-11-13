@@ -28,50 +28,54 @@ export default class Register extends React.Component {
     register(){
         var self = this;
         if (
-            self._username.isValid() && self._password.isValid() && self._userAddress.isValid()
+            self._username.isValid() && self._password.isValid()
             && self._userAccount.isValid() && (self.state._userPassword != "")
         ){
             var username = self._username.getValue();
             var password = self._password.getValue();
-            var userAddress = self._userAddress.getValue();
             var userPassword = self._userPassword.getValue();
             var userAccount = self._userAccount.getValue();
             self.setState({loading: true});
-            var payloadData = Actions.Ethereum.buildFunctionData([
-                username, password
-            ], 'register', Store.contracts.Crowdjury.interface)
-            var registerTx = Actions.Ethereum.buildTX({
-                to: Store.contracts.Crowdjury.address,
-                from : userAddress,
-                data: payloadData
-            });
-            Actions.Account.sign({
+            Actions.Account.unlockAccount({
                 password: userPassword,
                 data: userAccount
-            },
-            registerTx,
-            function(err, signedTX){
-                Actions.Ethereum.sendTXs([signedTX], function(err){
-                    if (err){
-                        var modalBody =
-                            <div class="row modalBody">
-                                <div class="col-xs-12 text-center margin-bottom">
-                                    {err}
-                                </div>
-                            </div>;
-                        self.setState({loading: false});
-                        self._modal.setState({open: true, title: 'Error', body: modalBody});
-                    } else {
-                        var modalBody =
-                            <div class="row modalBody">
-                                <div class="col-xs-12 text-center margin-bottom">
-                                    New user registered:
-                                    <br/><strong>{username}</strong><br></br>
-                                </div>
-                            </div>;
-                        self.setState({loading: false});
-                        self._modal.setState({open: true, title: 'User Registered', body: modalBody});
-                    }
+            }, function(err, decryptedAccount){
+                var payloadData = Actions.Ethereum.buildFunctionData([
+                    username, password
+                ], 'register', Store.contracts.Crowdjury.interface)
+                var registerTx = Actions.Ethereum.buildTX({
+                    to: Store.contracts.Crowdjury.address,
+                    from : decryptedAccount.address,
+                    data: payloadData
+                });
+                Actions.Account.sign({
+                    password: userPassword,
+                    data: userAccount
+                },
+                registerTx,
+                function(err, signedTX){
+                    Actions.Ethereum.sendTXs([signedTX], function(err){
+                        if (err){
+                            var modalBody =
+                                <div class="row modalBody">
+                                    <div class="col-xs-12 text-center margin-bottom">
+                                        {err}
+                                    </div>
+                                </div>;
+                            self.setState({loading: false});
+                            self._modal.setState({open: true, title: 'Error', body: modalBody});
+                        } else {
+                            var modalBody =
+                                <div class="row modalBody">
+                                    <div class="col-xs-12 text-center margin-bottom">
+                                        New user registered:
+                                        <br/><strong>{username}</strong><br></br>
+                                    </div>
+                                </div>;
+                            self.setState({loading: false});
+                            self._modal.setState({open: true, title: 'User Registered', body: modalBody});
+                        }
+                    });
                 });
             });
         }
@@ -102,12 +106,6 @@ export default class Register extends React.Component {
                             regex="^[a-zA-Z0-9àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœñÑ$@$!%*?&#_~]{6,}$"
                             title='Crowdjury Password'
                             placeholder='Password'
-                        />
-                        <Input
-                            ref={(c) => this._userAddress = c}
-                            type='address'
-                            title='Account Address'
-                            placeholder='Address'
                         />
                         <Input
                             ref={(c) => this._userAccount = c}

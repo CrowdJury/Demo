@@ -14,7 +14,6 @@ import CreateAccount from "./views/CreateAccount";
 
 import Home from "./views/Home";
 
-import Configure from "./views/Configure";
 import Accounts from "./views/Accounts";
 
 import Admin from "./views/Admin";
@@ -53,7 +52,6 @@ ReactDOM.render(
 
         <Route path="/home" name="home" component={Home}></Route>
 
-        <Route path="/configure" name="configure" component={Configure}></Route>
         <Route path="/accounts" name="accounts" component={Accounts}></Route>
 
         <Route path="/admin" name="admin" component={Admin}></Route>
